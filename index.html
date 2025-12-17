@@ -1,77 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Night Cycling Anti-Glare Visor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Anti-Glare Optics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
+    :root {
+      --bg-main: #0f1419;
+      --bg-soft: #141b22;
+      --text-main: #e6eaf0;
+      --text-muted: #9aa4af;
+      --accent: #7fb3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #1F2933;
-      color: #E5E7EB;
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(
+        1200px 600px at 50% -200px,
+        #1b2430,
+        var(--bg-main)
+      );
+      color: var(--text-main);
+      line-height: 1.65;
     }
+
     .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 24px;
     }
+
     h1 {
-      font-size: 2.4rem;
-      background: linear-gradient(90deg, #E6F1FF, #7FB3FF);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #e6f1ff, #7fb3ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    button {
-      padding: 14px 20px;
-      margin: 10px 10px 0 0;
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-top: 140px;
+    }
+
+    .hero {
+      margin-top: 40px;
+    }
+
+    .cta {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cta button {
+      padding: 14px 22px;
       font-size: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
+      background: var(--accent);
+      color: #0b0f14;
+      font-weight: 500;
     }
-    .btn-like {
-      background: transparent;
-      color: #E5E7EB;
-      border: 1px solid #9CA3AF;
+
+    .cta small {
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
-    .btn-buy {
-      background: #3B82F6;
-      color: white;
+
+    .panel {
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.04),
+        rgba(255,255,255,0.01)
+      );
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 820px;
     }
-    section {
-      margin-top: 60px;
+
+    footer {
+      margin-top: 180px;
+      padding-bottom: 60px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Blinded by LED headlights while cycling at night?</h1>
-    <p>
-      A clip-on anti-glare visor that reduces headlight glare using optics —
-      not dark tint.
-    </p>
+  <main class="container">
 
-    <button class="btn-like">👍 This makes sense</button>
-    <button class="btn-buy">🛒 I’d consider buying this</button>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>
+        Modern headlights are blinding.<br />
+        Vision shouldn’t be the trade-off.
+      </h1>
 
-    <section>
-      <h2>Why night cycling has become painful</h2>
       <p>
-        Modern LED headlights are brighter, higher mounted, and harsher than older lights.
-        Dark visors are unsafe, and most “anti-glare” products don’t work.
+        A clip-on optical visor designed to reduce headlight glare — without
+        darkening your view.
+      </p>
+
+      <div class="cta">
+        <a href="mailto:notify@example.com?subject=Notify me when it's ready">
+          <button>Get notified when it’s ready</button>
+        </a>
+        <small>Early access when the product is completed.</small>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section>
+      <h2>The problem has changed</h2>
+      <p>
+        Headlights are brighter, higher mounted, and harsher than ever.
+        What once improved visibility now often overwhelms it.
+      </p>
+      <p>
+        Glare isn’t just uncomfortable — it temporarily degrades contrast,
+        depth perception, and reaction time. For many, it turns night driving
+        into a constant compromise.
       </p>
     </section>
 
+    <!-- INSIGHT -->
+    <section class="panel">
+      <h2>It’s not just brightness</h2>
+      <p>
+        The issue isn’t simply “too much light”.
+        It’s how modern light interacts with the human eye —
+        scattering, contrast loss, and sudden intensity changes.
+      </p>
+      <p>
+        Darkening everything helps glare, but destroys visibility.
+        The real solution lies in optics, not tint.
+      </p>
+    </section>
+
+    <!-- IDEA -->
     <section>
       <h2>The idea</h2>
       <p>
-        A lightweight clip-on visor designed to selectively reduce glare
-        while keeping the road visible.
+        A lightweight, attachable optical element that selectively reduces
+        headlight glare while preserving the rest of the visual scene.
+      </p>
+      <p>
+        No electronics. No batteries. No permanent changes.
+        Designed to work with what you already use.
       </p>
     </section>
-  </div>
+
+    <!-- STATUS -->
+    <section class="panel">
+      <h2>Current status</h2>
+      <p>
+        This is an early product concept approaching completion.
+        The focus is on getting the optics, form, and experience right
+        before release.
+      </p>
+      <p>
+        Notifications are for availability only — no spam, no marketing noise.
+      </p>
+    </section>
+
+    <footer>
+      © Project in development · Optical glare reduction
+    </footer>
+
+  </main>
 </body>
 </html>
+
