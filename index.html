@@ -7,8 +7,8 @@
 
   <style>
     :root {
-      --bg-main: #0e1318;
-      --bg-panel: #141a21;
+      --bg-main: #0c1116;
+      --bg-soft: #121821;
       --text-main: #e7ebf1;
       --text-muted: #9aa3ad;
       --accent: #7fb3ff;
@@ -22,30 +22,24 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(
-        1200px 600px at 50% -200px,
-        #1a2330,
-        var(--bg-main)
-      );
+      background: linear-gradient(180deg, #0b0f14 0%, var(--bg-main) 100%);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 24px 100px;
+      padding: 56px 32px 120px;
     }
 
-    section {
-      margin-top: 80px;
-    }
+    /* ---------- TYPOGRAPHY ---------- */
 
     h1 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-size: clamp(2.4rem, 4vw, 3.3rem);
       font-weight: 600;
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin: 0 0 22px;
       background: linear-gradient(90deg, #e6f1ff, #7fb3ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -54,17 +48,17 @@
     h2 {
       font-size: 1.45rem;
       font-weight: 500;
-      margin-bottom: 14px;
+      margin: 0 0 14px;
     }
 
     p {
       color: var(--text-muted);
-      max-width: 720px;
-      margin-bottom: 16px;
+      max-width: 640px;
+      margin: 0 0 16px;
     }
 
     ul {
-      margin: 16px 0 0;
+      margin: 18px 0 0;
       padding-left: 18px;
       color: var(--text-muted);
     }
@@ -73,23 +67,47 @@
       margin-bottom: 8px;
     }
 
+    /* ---------- LAYOUT ---------- */
+
+    section {
+      margin-top: 72px;
+    }
+
     .panel {
       background: linear-gradient(
         180deg,
         rgba(255,255,255,0.04),
-        rgba(255,255,255,0.01)
+        rgba(255,255,255,0.015)
       );
       border: 1px solid var(--border-soft);
       border-radius: 16px;
       padding: 36px;
+      max-width: 760px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      min-height: 78vh;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 560px;
     }
 
     .cta {
-      margin-top: 28px;
+      margin-top: 34px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     button {
-      padding: 13px 22px;
+      padding: 14px 24px;
       font-size: 0.95rem;
       border-radius: 10px;
       border: none;
@@ -100,11 +118,18 @@
     }
 
     small {
-      display: block;
-      margin-top: 10px;
-      color: var(--text-muted);
+      color: #8a939d;
       font-size: 0.85rem;
+      max-width: 220px;
     }
+
+    .hero-visual {
+      position: relative;
+      height: 100%;
+      border-left: 1px solid var(--border-soft);
+    }
+
+    /* ---------- FORMS ---------- */
 
     form {
       margin-top: 18px;
@@ -116,7 +141,7 @@
       width: 100%;
       padding: 12px 14px;
       margin-bottom: 12px;
-      background: var(--bg-panel);
+      background: var(--bg-soft);
       border: 1px solid var(--border-soft);
       border-radius: 10px;
       color: var(--text-main);
@@ -139,54 +164,74 @@
       font-size: 0.8rem;
       color: var(--text-muted);
     }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body>
   <main class="container">
 
-    <!-- SECTION 1: PRODUCT -->
-    <section>
-      <h1>An optical solution for headlight glare.</h1>
+    <!-- HERO / PRODUCT -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>An optical solution for headlight glare.</h1>
 
-      <p>
-        A clip-on visor designed to reduce headlight glare without darkening your vision.
-      </p>
+        <p>
+          A clip-on visor designed to reduce headlight glare without darkening
+          your vision.
+        </p>
 
-      <p>
-        This product is a compact optical element that selectively manages incoming light,
-        preserving clarity, contrast, and depth even in challenging night conditions.
-      </p>
+        <p>
+          It selectively manages incoming light to preserve clarity, contrast,
+          and depth — even in challenging night conditions.
+        </p>
 
-      <ul>
-        <li>Passive optical design</li>
-        <li>No electronics or power</li>
-        <li>Built to integrate with what you already use</li>
-      </ul>
+        <div class="cta">
+          <button>Get notified when it’s ready</button>
+          <small>Release updates only.</small>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- reserved for future visual -->
+      </div>
     </section>
 
-    <!-- SECTION 2: PROBLEM -->
+    <!-- PROBLEM -->
     <section>
       <h2>Headlight glare has become unavoidable.</h2>
 
       <p>
         Modern headlights are brighter, higher mounted, and harsher than before.
-        While visibility has improved on paper, glare and visual fatigue have increased in practice.
+        While visibility has improved on paper, glare and visual fatigue have
+        increased in practice.
       </p>
 
       <p>
-        For many night riders and drivers, glare makes it harder to ride or drive comfortably,
-        causing constant eye strain and irritation — not because of darkness, but because of
-        excess, unmanaged light.
+        For many night riders and drivers, glare makes it harder to ride or drive
+        comfortably, causing constant eye strain and irritation — not because of
+        darkness, but because of excess, unmanaged light.
       </p>
 
       <p>
-        The issue isn’t brightness alone.  
+        The issue isn’t brightness alone.
         It’s how light interacts with human vision.
       </p>
     </section>
 
-    <!-- SECTION 3: SOLUTION -->
+    <!-- SOLUTION -->
     <section class="panel">
       <h2>A different way to deal with glare.</h2>
 
@@ -195,17 +240,18 @@
       </p>
 
       <p>
-        Optical filtering softens harsh headlight glare while keeping the rest of the scene
-        clear and balanced, avoiding the visibility loss common with tinted solutions.
+        Optical filtering softens harsh headlight glare while keeping the rest of
+        the scene clear and balanced, avoiding the visibility loss common with
+        tinted solutions.
       </p>
 
       <p>
-        The design is fully passive — no electronics, no delay — always active as lighting
-        conditions change.
+        The design is fully passive — no electronics, no delay — always active as
+        lighting conditions change.
       </p>
     </section>
 
-    <!-- SECTION 4: AVAILABILITY + SUGGESTIONS -->
+    <!-- AVAILABILITY -->
     <section>
       <h2>Coming soon.</h2>
 
@@ -218,15 +264,13 @@
         Availability will be announced once it is ready to be offered for sale.
       </p>
 
-      <div class="cta">
-        <form action="mailto:notify@example.com" method="post" enctype="text/plain">
-          <input type="email" name="email" placeholder="Your email" required />
-          <button type="submit">Get notified when it’s ready</button>
-          <small>Release updates only.</small>
-        </form>
-      </div>
+      <form action="mailto:notify@example.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Your email" required />
+        <button type="submit">Get notified when it’s ready</button>
+        <small>Release updates only.</small>
+      </form>
 
-      <div class="panel" style="margin-top: 40px;">
+      <div class="panel" style="margin-top: 48px;">
         <h2 style="font-size:1.1rem;">Have something to share?</h2>
         <p>
           Observations or thoughts about headlight glare are always welcome.
