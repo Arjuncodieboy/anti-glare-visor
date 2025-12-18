@@ -9,72 +9,66 @@
 :root {
   --warm: #FCBB6D;
   --rose: #D8737F;
-  --muted: #AB6C82;
   --violet: #685D79;
   --night: #475C7A;
 
-  --bg: #070b18;
+  --bg: #050813;
   --text: #eef1f6;
-  --muted-text: #b8becb;
+  --muted: #b8becb;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
   background:
-    radial-gradient(600px 300px at 12% 8%, rgba(252,187,109,0.14), transparent 60%),
-    radial-gradient(500px 280px at 35% 40%, rgba(216,115,127,0.12), transparent 65%),
-    linear-gradient(180deg, #050813, var(--bg));
+    radial-gradient(600px 260px at 10% 8%, rgba(252,187,109,0.14), transparent 60%),
+    radial-gradient(520px 280px at 35% 38%, rgba(216,115,127,0.10), transparent 65%),
+    linear-gradient(180deg, #040712, var(--bg));
   color: var(--text);
   line-height: 1.6;
 }
 
-/* ---------- LAYOUT ---------- */
-
 .page {
   max-width: 1200px;
-  padding: 28px 32px 120px 64px; /* tight top spacing */
-}
-
-section {
-  margin-top: 72px;
-}
-
-section:first-of-type {
-  margin-top: 0;
+  padding: 28px 32px 120px 64px;
 }
 
 /* ---------- TYPOGRAPHY ---------- */
 
 h1 {
-  font-size: clamp(2.6rem, 3.4vw, 3.1rem);
+  font-size: clamp(2.6rem, 3.2vw, 3.1rem);
   font-weight: 600;
   line-height: 1.15;
+  margin: 0 0 16px 0;
   letter-spacing: -0.025em;
-  margin: 0 0 18px 0;
-  background: linear-gradient(
-    90deg,
-    var(--warm),
-    #ffffff 45%,
-    var(--warm)
-  );
+  background: linear-gradient(90deg, var(--warm), #ffffff 45%, var(--warm));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 500;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
 }
 
 p {
-  max-width: 720px;
+  max-width: 760px;
   font-size: 1.05rem;
-  color: var(--muted-text);
-  margin: 0 0 14px 0;
+  color: var(--muted);
+  margin: 0 0 12px 0;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+  margin-top: 64px;
+}
+
+section:first-of-type {
+  margin-top: 0;
 }
 
 /* ---------- HERO ---------- */
@@ -82,19 +76,20 @@ p {
 .hero {
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 80px;
+  gap: 72px;
   align-items: center;
 }
 
 .hero-visual {
   height: 320px;
-  border-radius: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(252,187,109,0.35),
-    rgba(216,115,127,0.35),
-    rgba(71,92,122,0.35)
-  );
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(252,187,109,0.35),
+      rgba(216,115,127,0.25),
+      rgba(71,92,122,0.35)
+    );
   opacity: 0.9;
 }
 
@@ -108,10 +103,14 @@ p {
   );
   border-radius: 18px;
   padding: 26px 28px;
-  max-width: 760px;
+  max-width: 780px;
 }
 
 /* ---------- FORMS ---------- */
+
+form {
+  max-width: 420px;
+}
 
 input, textarea {
   width: 100%;
@@ -152,7 +151,7 @@ button {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   .page {
     padding-left: 28px;
@@ -164,105 +163,113 @@ button {
 <body>
 <div class="page">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>An optical solution for headlight glare.</h1>
-      <p>
-        A clip-on visor designed to reduce harsh headlight glare without darkening
-        your vision. It selectively manages incoming light so the scene remains
-        clear, balanced, and comfortable to view.
-      </p>
-      <p>
-        Built for night riders and drivers who experience fatigue, irritation,
-        and visual discomfort from modern headlights.
-      </p>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>An optical solution for headlight glare.</h1>
+    <p>
+      This is a clip-on visor designed to reduce harsh headlight glare without
+      dimming the rest of the scene. It selectively manages incoming light so
+      contrast, depth, and clarity are preserved.
+    </p>
+    <p>
+      Built for people who ride or drive at night and experience eye strain,
+      irritation, or reduced comfort due to modern headlights.
+    </p>
+  </div>
+
+  <div class="hero-visual"></div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <h2>The problem has changed.</h2>
+  <p>
+    Headlights today are brighter, higher mounted, and more focused than before.
+    While this improves forward visibility, it also produces intense glare for
+    oncoming riders and drivers.
+  </p>
+  <p>
+    The result is not darkness, but unmanaged light entering the eye — making it
+    harder to focus, uncomfortable to look ahead, and tiring over time.
+  </p>
+</section>
+
+<!-- SOLUTION -->
+<section class="panel">
+  <h2>A different approach.</h2>
+  <p>
+    Instead of reducing brightness across the entire view, this visor reshapes
+    how specific glare reaches the eye. Optical filtering softens high-intensity
+    sources while keeping the surrounding scene readable.
+  </p>
+  <p>
+    The system is fully passive. No electronics, no processing delay, and no loss
+    of situational awareness.
+  </p>
+</section>
+
+<!-- NOTIFY -->
+<section>
+  <h2>Availability</h2>
+  <p>
+    The design is currently being refined with focus on optics, comfort, and
+    real-world usability. Updates will be shared when it’s ready.
+  </p>
+
+  <form
+    action="https://docs.google.com/forms/d/e/1FAIpQLSfAHTNDJb-hepvz7rW_-5kkpzqHTzn6NWyNaODSX0Qn5JmnBw/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="notifySubmit()"
+  >
+    <input
+      type="email"
+      name="entry.731108252"
+      placeholder="Your email"
+      required
+    />
+    <button type="submit">Get notified</button>
+    <div class="confirmation" id="notifyConfirm">
+      You’ll be notified when updates are available.
     </div>
+  </form>
+</section>
 
-    <!-- image placeholder -->
-    <div class="hero-visual"></div>
-  </section>
+<!-- SUGGESTIONS -->
+<section class="panel">
+  <h2>Share an observation</h2>
+  <p>
+    Real experiences with headlight glare help guide design decisions. If you’ve
+    noticed something specific, it’s welcome here.
+  </p>
 
-  <!-- PROBLEM -->
-  <section>
-    <h2>Headlight glare has changed.</h2>
-    <p>
-      Modern headlights are brighter, higher mounted, and harsher than before.
-      While they improve visibility for some, they often create unmanaged glare
-      for oncoming riders and drivers.
-    </p>
-    <p>
-      This glare makes it harder to focus, strains the eyes, and turns night travel
-      into a tiring and irritating experience. The issue isn’t darkness — it’s
-      uncontrolled light entering the eye.
-    </p>
-  </section>
+  <form
+    action="https://docs.google.com/forms/d/e/1FAIpQLSfAHTNDJb-hepvz7rW_-5kkpzqHTzn6NWyNaODSX0Qn5JmnBw/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="suggestSubmit()"
+  >
+    <!-- REQUIRED EMAIL (hidden but submitted) -->
+    <input
+      type="email"
+      name="entry.731108252"
+      placeholder="Your email"
+      required
+    />
 
-  <!-- SOLUTION -->
-  <section class="panel">
-    <h2>A different way to deal with glare.</h2>
-    <p>
-      Instead of dimming everything, this approach reshapes how light reaches the
-      eye. Optical filtering softens intense glare while keeping the rest of the
-      scene readable and natural.
-    </p>
-    <p>
-      The design is fully passive — no electronics, no processing delay, and no
-      compromise to situational awareness.
-    </p>
-  </section>
+    <textarea
+      name="entry.413541287"
+      placeholder="Write here..."
+    ></textarea>
 
-  <!-- NOTIFY -->
-  <section>
-    <h2>Availability</h2>
-    <p>
-      The product is currently being refined with a focus on optics, form, and
-      overall experience. Updates will be shared when it’s ready.
-    </p>
+    <button type="submit">Send</button>
 
-    <form
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfAHTNDJb-hepvz7rW_-5kkpzqHTzn6NWyNaODSX0Qn5JmnBw/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="notifySubmit()"
-    >
-      <input
-        type="email"
-        name="entry.731108252"
-        placeholder="Your email"
-        required
-      />
-      <button type="submit">Get notified</button>
-      <div class="confirmation" id="notifyConfirm">
-        Thanks — you’ll hear from us when it’s ready.
-      </div>
-    </form>
-  </section>
-
-  <!-- SUGGESTIONS -->
-  <section class="panel">
-    <h2>Have something to share?</h2>
-    <p>
-      Observations or thoughts about headlight glare are always welcome. Real
-      experiences help shape better solutions.
-    </p>
-
-    <form
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfAHTNDJb-hepvz7rW_-5kkpzqHTzn6NWyNaODSX0Qn5JmnBw/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="suggestSubmit()"
-    >
-      <textarea
-        name="entry.413541287"
-        placeholder="Write here..."
-      ></textarea>
-      <button type="submit">Send</button>
-      <div class="confirmation" id="suggestConfirm">
-        Thanks for sharing your thoughts.
-      </div>
-    </form>
-  </section>
+    <div class="confirmation" id="suggestConfirm">
+      Thanks for sharing — it’s been recorded.
+    </div>
+  </form>
+</section>
 
 </div>
 
