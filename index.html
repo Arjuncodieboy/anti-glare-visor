@@ -31,9 +31,11 @@ body {
   line-height: 1.65;
 }
 
+/* ---------- PAGE ---------- */
+
 .page {
   max-width: 1200px;
-  padding: 56px 32px 140px 64px;
+  padding: 28px 32px 120px 64px; /* reduced top padding */
 }
 
 /* ---------- TYPOGRAPHY ---------- */
@@ -42,8 +44,8 @@ h1 {
   font-size: clamp(2.6rem, 4.5vw, 3.6rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  margin: 0 0 24px;
-  background: linear-gradient(90deg, var(--warm-glare), #fff 40%, var(--warm-glare));
+  margin: 0 0 20px 0;
+  background: linear-gradient(90deg, var(--warm-glare), #ffffff 40%, var(--warm-glare));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -51,24 +53,24 @@ h1 {
 h2 {
   font-size: 1.6rem;
   font-weight: 500;
-  margin: 0 0 14px;
+  margin: 0 0 12px 0;
 }
 
 p {
-  max-width: 680px;
+  max-width: 700px;
   color: var(--text-muted);
-  margin: 0 0 18px;
+  margin: 0 0 14px 0;
 }
 
 /* ---------- SECTIONS ---------- */
 
 section {
-  margin-top: 96px;
+  margin-top: 84px;
 }
 
-/* EXTRA SPACE BEFORE SUGGESTION SECTION */
-section.spaced {
-  margin-top: 140px;
+/* remove extra space ONLY for hero */
+section:first-of-type {
+  margin-top: 0;
 }
 
 /* ---------- HERO ---------- */
@@ -94,10 +96,10 @@ section.spaced {
 /* ---------- CTA ---------- */
 
 .cta {
-  margin-top: 32px;
+  margin-top: 26px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 button {
@@ -117,8 +119,8 @@ button:active {
 /* ---------- PANEL ---------- */
 
 .panel {
-  max-width: 760px;
-  padding: 40px;
+  max-width: 780px;
+  padding: 36px 40px;
   border-radius: 20px;
   background: linear-gradient(
     180deg,
@@ -130,14 +132,14 @@ button:active {
 /* ---------- FORMS ---------- */
 
 form {
-  margin-top: 24px;
+  margin-top: 20px;
   max-width: 420px;
 }
 
 input, textarea {
   width: 100%;
   padding: 13px 15px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
@@ -150,7 +152,7 @@ textarea {
 }
 
 .confirmation {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 0.9rem;
   color: var(--warm-glare);
   display: none;
@@ -159,7 +161,7 @@ textarea {
 /* ---------- FOOTER ---------- */
 
 footer {
-  margin-top: 160px;
+  margin-top: 140px;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.45);
 }
@@ -168,11 +170,13 @@ footer {
 
 @media (max-width: 900px) {
   .page {
-    padding: 40px 20px 120px;
+    padding: 24px 20px 100px;
   }
+
   .hero {
     grid-template-columns: 1fr;
   }
+
   .hero-visual {
     height: 260px;
   }
@@ -187,47 +191,98 @@ footer {
   <section class="hero">
     <div>
       <h1>An optical solution for headlight glare.</h1>
-      <p>A clip-on visor that reduces headlight glare without darkening vision.</p>
-      <p>Designed to selectively manage incoming light, preserving clarity and comfort.</p>
+
+      <p>
+        A clip-on visor designed to reduce headlight glare without darkening vision,
+        allowing drivers and riders to see clearly even in harsh lighting conditions.
+        Instead of dimming the entire scene, it focuses on managing how light reaches
+        the eye.
+      </p>
+
+      <p>
+        The goal is simple: preserve contrast, reduce eye strain, and make night
+        driving or riding more comfortable without changing how you normally see
+        the road.
+      </p>
+
+      <div class="cta">
+        <button>Get notified when it’s ready</button>
+      </div>
     </div>
+
+    <!-- IMAGE SPACE -->
     <div class="hero-visual"></div>
   </section>
 
   <!-- PROBLEM -->
   <section>
     <h2>Headlight glare has changed.</h2>
-    <p>Modern headlights are brighter, higher mounted, and harsher than before.</p>
-    <p>The problem isn’t darkness. It’s unmanaged light.</p>
+
+    <p>
+      Modern headlights are brighter, higher mounted, and far harsher than older
+      lighting systems. While this improves visibility for some, it often results
+      in intense glare for others, especially in oncoming traffic or poorly lit
+      environments.
+    </p>
+
+    <p>
+      For many night riders and drivers, this constant exposure to bright,
+      unfocused light makes driving tiring, irritating to the eyes, and visually
+      uncomfortable over time. The problem isn’t darkness — it’s unmanaged light.
+    </p>
   </section>
 
   <!-- SOLUTION -->
   <section class="panel">
     <h2>A different way to deal with glare.</h2>
-    <p>Optical filtering softens harsh glare while keeping the scene readable.</p>
-    <p>Fully passive. No electronics. No delay.</p>
+
+    <p>
+      Instead of reducing all incoming light, this approach uses optical filtering
+      to selectively soften harsh glare while keeping the rest of the scene clear
+      and readable. This helps maintain depth, contrast, and situational awareness.
+    </p>
+
+    <p>
+      The design is fully passive, meaning there are no electronics, no power
+      requirements, and no delay. The optical effect is always active and adapts
+      naturally to changing lighting conditions.
+    </p>
   </section>
 
-  <!-- NOTIFY -->
+  <!-- AVAILABILITY -->
   <section>
     <h2>Coming soon.</h2>
-    <p>Availability will be announced when it’s ready.</p>
+
+    <p>
+      The product is currently being completed, with focus on refining the optics,
+      physical form, and overall experience. Availability will be announced once
+      it is ready for release.
+    </p>
 
     <form id="notifyForm">
-      <input type="email" id="notifyEmail" placeholder="Your email" required />
+      <input type="email" placeholder="Your email" required />
       <button type="submit">Get notified</button>
-      <div class="confirmation" id="notifyConfirm">Thanks — you’ll be notified.</div>
+      <div class="confirmation" id="notifyConfirm">
+        Thanks — you’ll be notified when it’s available.
+      </div>
     </form>
   </section>
 
   <!-- SUGGESTIONS -->
-  <section class="panel spaced">
+  <section class="panel">
     <h2 style="font-size:1.2rem;">Have something to share?</h2>
-    <p>Thoughts or observations about headlight glare are welcome.</p>
+
+    <p>
+      If you’ve experienced headlight glare or have thoughts on how it affects
+      night driving or riding, your input is always welcome.
+    </p>
 
     <form id="suggestForm">
-      <textarea id="suggestText" placeholder="Write here..."></textarea>
+      <textarea placeholder="Write here..."></textarea>
       <button type="submit">Send</button>
-      <div class="confirmation" id="suggestConfirm">Thanks for sharing.</div>
+      <div class="confirmation" id="suggestConfirm">
+        Thanks for sharing your thoughts.
+      </div>
     </form>
   </section>
 
